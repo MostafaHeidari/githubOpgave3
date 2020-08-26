@@ -19,15 +19,86 @@
 
     <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
     <link href="landscapes%20.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
 
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<!-- i <body> har man alt indhold på siden som brugeren kan se -->
+
 <body>
+<div id="landscapes-section">
+    <div class="overskrift1"><h1>Landscapes</h1></div>
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul id="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul id="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul id="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
 
 
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        let mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+
+        })
+    });
+</script>
 
 </body>
 </html>
