@@ -1,33 +1,152 @@
-<!-- Instruktion til webbrowser om at vi kører HTML5 -->
 <!DOCTYPE html>
-
-<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
-<html lang="da">
-
-<!-- I <head> har man opsætning - det ser brugeren ikke, men det fortæller noget om siden -->
+<html lang="en">
 <head>
-    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Title</title>
 
-    <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Sigende titel</title>
-
-    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
     <meta name="robots" content="All">
-    <meta name="author" content="Udgiver">
-    <meta name="copyright" content="Information om copyright">
+    <meta name="author" content="Henrik Piga">
+    <meta name="copyright" content="All rights reserved">
 
-    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-
-    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
+    <link rel="stylesheet" href="node_modules/owl.carousel/src/scss/owl.theme.default.scss">
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<!-- i <body> har man alt indhold på siden som brugeren kan se -->
+
 <body>
 
-<!-- Her skal sidens indhold ligge -->
+<h1>Art Webshop</h1>
 
+<div class="topPageContainer">
+    <div class="topPageInfoBox">
+        <h2>Classic, <br>the 'new' black</h2>
+        <h3>Know what never goes out of style? Art, classic art only gets more classic with time!</h3>
+
+        <button id="goToShop" class="buttons">Buy Classic Art</button>
+    </div>
+
+    <div id="shoppingCartDiv">
+        <ion-icon name="cart-outline" id="shoppingCartIcon"></ion-icon>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+            <div class="owl-carousel" id="shop-carousel">
+                <!-- shop item 1 start -->
+                <div class="shop-item">
+                    <figure class="shop-content">
+                        <!-- shop IMG start -->
+                        <img alt="Shop Img" src="img/shop/shop-1.jpg"><!-- shop IMG end -->
+                        <figcaption>
+                            <!-- inner divider start -->
+                            <div class="inner-divider-half"></div><!-- inner divider end -->
+                            <!-- shop title start -->
+                            <h4 class="post-all-heading post-all-heading-dark">
+                                Portraits
+                            </h4><!-- shop title end -->
+
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- section TXT start -->
+                            <div class="section-txt-shop">
+                                <p>
+
+                                </p>
+                            </div><!-- section TXT end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- the button wrapper start -->
+                            <div class="the-button-wrapper the-button-wrapper-details">
+                                <a data-mfp-src="#poster-popup" class="the-button the-button-details">
+                                    Browse Portraits
+                                </a>
+                            </div><!-- the button wrapper end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                        </figcaption>
+                    </figure>
+                </div><!-- shop item 1 end -->
+                <!-- shop item 2 start -->
+                <div class="shop-item">
+                    <figure class="shop-content">
+                        <!-- shop IMG start -->
+                        <img alt="Shop Img" src="img/shop/shop-2.jpg"><!-- shop IMG end -->
+                        <figcaption>
+                            <!-- inner divider start -->
+                            <div class="inner-divider-half"></div><!-- inner divider end -->
+                            <!-- shop title start -->
+                            <h4 class="post-all-heading post-all-heading-dark">
+                                Landscapes
+                            </h4><!-- shop title end -->
+
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- section TXT start -->
+                            <div class="section-txt-shop">
+                                <p>
+
+                                </p>
+                            </div><!-- section TXT end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- the button wrapper start -->
+                            <div class="the-button-wrapper the-button-wrapper-details">
+                                <a data-mfp-src="#fineart-popup" class="the-button the-button-details">
+                                    Browse Landscapes
+                                </a>
+                            </div><!-- the button wrapper end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                        </figcaption>
+                    </figure>
+                </div><!-- shop item 2 end -->
+                <!-- shop item 3 start -->
+                <div class="shop-item">
+                    <figure class="shop-content">
+                        <!-- shop IMG start -->
+                        <img alt="Shop Img" src="img/shop/shop-3.jpg"><!-- shop IMG end -->
+                        <figcaption>
+                            <!-- shop title start -->
+                            <h4 class="post-all-heading post-all-heading-dark">
+                                Animals
+                            </h4><!-- shop title end -->
+                            <!-- inner divider start -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- section TXT start -->
+                            <div class="section-txt-shop">
+                                <p>
+                                </p>
+                            </div><!-- section TXT end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                            <!-- the button wrapper start -->
+                            <div class="the-button-wrapper the-button-wrapper-details">
+                                <a data-mfp-src="#stock-popup" class="the-button the-button-details">
+                                    Browse Animals
+                                </a>
+                            </div><!-- the button wrapper end -->
+                            <!-- inner divider start -->
+                            <div class="inner-divider"></div><!-- inner divider end -->
+                        </figcaption>
+                    </figure>
+                </div><!-- shop item 3 end -->
+            </div><!-- shop carousel end -->
+</div><!-- container end -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
+
+    });
+
+</script>
 </body>
 </html>

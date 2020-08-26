@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ionicons": "^5.1.2",
+    "jquery": "^3.5.1",
+    "magnific-popup": "^1.1.0",
+    "owl.carousel": "^2.3.4"
+  }
+}
