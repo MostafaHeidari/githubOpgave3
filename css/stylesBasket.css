@@ -10,7 +10,7 @@ html {
 
 body {
     margin: 0; /* Ingen kanter i siden af browser */
-    background-image: url("");
+    background-image: url("../images/bg-horizon-mobile.jpg");
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,3 +39,56 @@ img {
     max-width: 100%; /* Bredde må maks fylde 100% */
     height: auto; /* Højden skal tilpasse sig */
 }
+
+.coverShield{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(5vw);
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.basketContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 110;
+}
+
+.basketContainer > h6{
+    font-family: Raleway, sans-serif;
+    font-size: 13.15vw;
+    text-align: center;
+    width: 100%;
+    color: #707070;
+    margin-top: 6.472vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
