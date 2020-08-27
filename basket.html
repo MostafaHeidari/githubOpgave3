@@ -33,14 +33,99 @@
     <div class="basketContainer">
         <h6>Basket</h6>
 
-        <div></div>
+        <div class="cartItem">
+            <img src="images/bg-horizon-mobile.jpg" alt="produkt">
+            <p class="title">Madrid</p>
+            <p class="price">100 kroner</p>
+            <div class="cross">
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="setDelivery">
+            <button class="basketButton click">Set delivery</button>
+            <p>Edit</p>
+
+            <div class="deliveryInformation">
+                <form autocomplete="off">
+                    <label for="name">name:</label>
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+
+                    <label for="address">address:</label>
+                    <input type="text" id="address" name="address" autocomplete="off" required>
+
+                    <label for="zipCode">zip code:</label>
+                    <input type="text" id="zipCode" name="zipCode" autocomplete="off" required>
+
+                    <label for="province">province:</label>
+                    <input type="text" id="province" name="province" autocomplete="off">
+
+                    <label for="country">country:</label>
+                    <input type="text" id="country" name="country" autocomplete="off" required>
+
+<!--                    Til at give "Udfyld dette felt" alert-->
+                    <input class="submit" type="submit" value="Confirm">
+                </form>
+
+                <button>Confirm</button>
+            </div>
+        </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 
     $(function () {
+        $(".setDelivery > p").hide();
 
+        $(".deliveryInformation button:last-of-type").click(function () {
+            if ($("#name").val()){
+                if ($("#address").val()){
+                    if ($("#zipCode").val()){
+                        if ($("#country").val()){
+                            hideDeliveryInfo();
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+        });
+
+        $(".setDelivery > p").click(function () {
+            showDeliveryInfo();
+        });
+
+        $(".basketButton").click(function () {
+            if ($(".basketButton").hasClass('click')){
+                if ($("#name").val()){
+                    if ($("#address").val()){
+                        if ($("#zipCode").val()){
+                            if ($("#country").val()){
+                                hideDeliveryInfo();
+                            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {
+                showDeliveryInfo()
+            }
+        });
+
+        function showDeliveryInfo()  {
+            $(".deliveryInformation").slideDown(400);
+            $(".setDelivery > p").fadeOut(200);
+            $(".basketButton").addClass("click");
+        }
+
+
+        function hideDeliveryInfo() {
+            $(".deliveryInformation").slideUp(400);
+            $(".setDelivery > p").fadeIn(200);
+            $(".setDelivery > .basketButton").css('background-color', '#5EB848');
+            $(".basketButton").removeClass("click");
+        }
     });
 
 </script>
