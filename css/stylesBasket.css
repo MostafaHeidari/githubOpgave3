@@ -63,55 +63,22 @@ img {
     align-items: center;
 }
 
-.basketContainer > h6{
-    font-family: Raleway, sans-serif;
-    font-size: 13.15vw;
-    text-align: center;
-    color: #707070;
-    margin-top: 6.472vw;
-    margin-bottom: 8.97vw;
-}
-
-.cartItem{
-    width: 87.26vw;
-    margin-top: 6.89vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.cartItem > img{
-    width: 100%;
-}
-
-.cartItem > p{
-    font-family: "Nunito", sans-serif;
-    color: #991B40;
-    font-size: 6.89vw;
-    font-weight: bold;
-}
-
-.cartItem > .title{
-    margin-top: 1.88vw;
-}
-
 .cross{
     width: 10.438vw;
     height: 10.438vw;
     border-radius: 100000px;
     border: solid 1vw #BC6A6A;
     position: absolute;
-    top: 0;
-    left: 97%;
-    transform: translate(-50%, -50%);
+    top: 10vw;
+    right: 10vw;
+    transform: translate(50%, -50%);
     background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: 0.2s;
 }
 
 .cross:hover{
-    transform: translate(-50%, -50%) scale(1.20, 1.20);
+    transform: translate(50%, -50%) scale(1.20, 1.20);
     opacity: 0.8;
 }
 
@@ -135,6 +102,51 @@ img {
 .cross > div > div:nth-of-type(2){
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+
+.basketContainer > h6{
+    font-family: Raleway, sans-serif;
+    font-size: 13.15vw;
+    text-align: center;
+    color: #707070;
+    margin-top: 12vw;
+    margin-bottom: 8.97vw;
+}
+
+.cartItem{
+    width: 87.26vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.cartItem > img{
+    width: 100%;
+}
+
+.cartItem > p{
+    font-family: "Nunito", sans-serif;
+    color: #991B40;
+    font-size: 6.89vw;
+    font-weight: bold;
+}
+
+.cartItem > .title{
+    margin-top: 1.88vw;
+}
+
+.cartItem > button{
+    background-color: transparent;
+    border: none;
+    font-family: Nunito, sans-serif;
+    font-size: 4vw;
+    color: #BC6A6A;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+}
+
 
 .setDelivery{
     margin-top: 10vw;
