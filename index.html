@@ -29,9 +29,9 @@
         </div>
     </div>
 
-    <div id="shoppingCartDiv">
+    <a href="basket2.html" id="shoppingCartDiv" class="popup-ajax">
         <ion-icon name="cart-outline" id="shoppingCartIcon"></ion-icon>
-    </div>
+    </a>
 </div>
 
 <div id="basket-popup" class="mfp-hide white-popup">
@@ -112,8 +112,8 @@
             }});
 
         $('#shoppingCartDiv').magnificPopup({  items: {
-                src: '#basket-popup',
-                type: 'inline'
+                src: 'basket.html',
+                type: 'ajax'
             }});
 
         var mySwiper = new Swiper('.swiper-container', {
