@@ -10,17 +10,13 @@
     <meta name="copyright" content="All rights reserved">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="node_modules/owl.carousel/src/scss/owl.theme.default.scss">
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
 <body>
 
-<h1>Art Webshop</h1>
+<h1>Logo?</h1>
 
 <div class="topPageContainer">
     <div class="topPageInfoBox">
@@ -28,126 +24,146 @@
         <h3>Know what never goes out of style? Art, classic art only gets more classic with time!</h3>
 
         <button id="goToShop" class="buttons">Buy Classic Art</button>
+        <div id="scroll-popup" class="mfp-hide white-popup">
+           <h2 style="color:#BC6A6A">Scroll down, silly!</h2>
+        </div>
     </div>
 
-    <div id="shoppingCartDiv">
+    <a href="basket2.html" id="shoppingCartDiv" class="popup-ajax">
         <ion-icon name="cart-outline" id="shoppingCartIcon"></ion-icon>
-    </div>
+    </a>
 </div>
 
+<div id="basket-popup" class="mfp-hide white-popup">
+    Basket empty!
+</div>
 
-<div class="container-fluid">
-            <div class="owl-carousel" id="shop-carousel">
-                <!-- shop item 1 start -->
-                <div class="shop-item">
-                    <figure class="shop-content">
-                        <!-- shop IMG start -->
-                        <img alt="Shop Img" src="img/shop/shop-1.jpg"><!-- shop IMG end -->
-                        <figcaption>
-                            <!-- inner divider start -->
-                            <div class="inner-divider-half"></div><!-- inner divider end -->
-                            <!-- shop title start -->
-                            <h4 class="post-all-heading post-all-heading-dark">
-                                Portraits
-                            </h4><!-- shop title end -->
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiperPage swiperPage1">
+            <h2>Landscapes</h2>
 
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- section TXT start -->
-                            <div class="section-txt-shop">
-                                <p>
+            <img src="images/0.jpg" alt="Landscape Category Section">
+            <button id="browseLandscapes" class="buttons browseButton">Browse Landscapes</button>
 
-                                </p>
-                            </div><!-- section TXT end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- the button wrapper start -->
-                            <div class="the-button-wrapper the-button-wrapper-details">
-                                <a data-mfp-src="#poster-popup" class="the-button the-button-details">
-                                    Browse Portraits
-                                </a>
-                            </div><!-- the button wrapper end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                        </figcaption>
-                    </figure>
-                </div><!-- shop item 1 end -->
-                <!-- shop item 2 start -->
-                <div class="shop-item">
-                    <figure class="shop-content">
-                        <!-- shop IMG start -->
-                        <img alt="Shop Img" src="img/shop/shop-2.jpg"><!-- shop IMG end -->
-                        <figcaption>
-                            <!-- inner divider start -->
-                            <div class="inner-divider-half"></div><!-- inner divider end -->
-                            <!-- shop title start -->
-                            <h4 class="post-all-heading post-all-heading-dark">
-                                Landscapes
-                            </h4><!-- shop title end -->
+            <div id="landscape-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Landscapes</h2>
+            </div>
+        </div>
+        <div class="swiper-slide swiperPage swiperPage2">
+            <h2>Animals</h2>
 
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- section TXT start -->
-                            <div class="section-txt-shop">
-                                <p>
+            <img src="images/000.jpg" alt="Landscape Category Section">
+            <button id="browseAnimals" class="buttons browseButton">Browse Animals</button>
 
-                                </p>
-                            </div><!-- section TXT end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- the button wrapper start -->
-                            <div class="the-button-wrapper the-button-wrapper-details">
-                                <a data-mfp-src="#fineart-popup" class="the-button the-button-details">
-                                    Browse Landscapes
-                                </a>
-                            </div><!-- the button wrapper end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                        </figcaption>
-                    </figure>
-                </div><!-- shop item 2 end -->
-                <!-- shop item 3 start -->
-                <div class="shop-item">
-                    <figure class="shop-content">
-                        <!-- shop IMG start -->
-                        <img alt="Shop Img" src="img/shop/shop-3.jpg"><!-- shop IMG end -->
-                        <figcaption>
-                            <!-- shop title start -->
-                            <h4 class="post-all-heading post-all-heading-dark">
-                                Animals
-                            </h4><!-- shop title end -->
-                            <!-- inner divider start -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- section TXT start -->
-                            <div class="section-txt-shop">
-                                <p>
-                                </p>
-                            </div><!-- section TXT end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                            <!-- the button wrapper start -->
-                            <div class="the-button-wrapper the-button-wrapper-details">
-                                <a data-mfp-src="#stock-popup" class="the-button the-button-details">
-                                    Browse Animals
-                                </a>
-                            </div><!-- the button wrapper end -->
-                            <!-- inner divider start -->
-                            <div class="inner-divider"></div><!-- inner divider end -->
-                        </figcaption>
-                    </figure>
-                </div><!-- shop item 3 end -->
-            </div><!-- shop carousel end -->
-</div><!-- container end -->
+            <div id="animal-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Animals</h2>
+            </div>
+        </div>
+        <div class="swiper-slide swiperPage swiperPage3">
+            <h2>Portraits</h2>
+
+            <img src="images/02.jpg" alt="Landscape Category Section">
+            <button id="browsePortraits" class="buttons browseButton">Browse Portraits</button>
+
+            <div id="portrait-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Portraits</h2>
+            </div>
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-    $(function () {
+    $(document).ready(function(){
 
+            $('#goToShop').magnificPopup({  items: {
+                    src: '#scroll-popup',
+                    type: 'inline'
+                }});
+
+        $('#browseLandscapes').magnificPopup({  items: {
+                src: '#landscape-popup',
+                type: 'inline'
+            }});
+
+        $('#browseAnimals').magnificPopup({  items: {
+                src: '#animal-popup',
+                type: 'inline'
+            }});
+
+        $('#browsePortraits').magnificPopup({  items: {
+                src: '#portrait-popup',
+                type: 'inline'
+            }});
+
+        $('#shoppingCartDiv').magnificPopup({  items: {
+                src: 'basket.html',
+                type: 'ajax'
+            }});
+
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 1,
+            margin: 5,
+            loop: true,
+            centeredSlides: true,
+            grabCursor: true,
+            simulateTouch:true,
+            fade: { crossFade: true },
+            // Responsive breakpoints
+            breakpoints: {
+                800: {
+                    slidesPerView: 2
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1920: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
     });
 
 </script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="node_modules/magnific-popup/dist/magnific-popup.css">
+
+<!-- Magnific Popup core JS file -->
+<script src="node_modules/magnific-popup/dist/jquery.magnific-popup.js"></script>
+
+<script src="js/forside.js"></script>
 </body>
 </html>
