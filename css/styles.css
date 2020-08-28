@@ -17,7 +17,7 @@ h1{
     display: block;
     position: relative;
     top: 0;
-    padding-left: 1em;
+    padding-left: 0.1em;
 
     font-size: 72px;
     font-weight: 800;
@@ -38,6 +38,19 @@ h4{
 
 }
 
+.topPageInfoBox {
+    display: block;
+    position: relative;
+    background: rgba(250,250,250,0.7);
+    /* width: 100%; */
+    max-height: 600px;
+    height: 40%;
+    border-radius: 15px;
+    top: 2em;
+    /* margin-left: 55%; */
+    /* margin-right: auto; */
+    padding: 2em;
+}
 
 
 .topPageContainer{
@@ -48,23 +61,6 @@ h4{
     background-size: contain;
     background-repeat: round;
     min-height: 500px;
-}
-
-.topPageInfoBox{
-    display: block;
-    position: relative;
-    background: rgba(250,250,250,0.7);
-    width: 30%;
-    max-height: 600px;
-    height: 40%;
-
-    border-radius: 15px;
-
-    top: 2em;
-
-    margin-left: 55%;
-    margin-right: auto;
-    padding: 2em;
 }
 
 .buttons{
@@ -83,7 +79,7 @@ h4{
 
 .topPageInfoBox button{
     min-height: 60px;
-    min-width: 200px;
+    min-width: 60px;
     width: fit-content;
     text-align: center;
     padding-right: 1em;
@@ -197,4 +193,71 @@ div.swiper-button-prev, div.swiper-button-next{
 
 .swiperPage h2{
     text-align: center;
+}
+
+.white-popup {
+    position: relative;
+    background: rgba(255,255,255,0.9);
+    color: #BC6A6A;
+    padding: 40px;
+    width: auto;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.shop-popup {
+    position: relative;
+    background: rgba(255,255,255,0.9);
+    color: #BC6A6A;
+    padding: 40px;
+    width: auto;
+    max-width: 1280px;
+    margin: 20px auto;
+    text-align: center;
+    min-height: 800px;
+    height: available;
+}
+
+@media only screen and (min-width: 800px) {
+
+
+    h1{
+        display: block;
+        position: relative;
+        top: 0;
+        padding-left: 1em;
+
+        font-size: 72px;
+        font-weight: 800;
+        margin-bottom: 0.1em;
+    }
+
+    .topPageInfoBox{
+        display: block;
+        position: relative;
+        background: rgba(250,250,250,0.7);
+        width: 30%;
+        max-height: 600px;
+        height: 40%;
+
+        border-radius: 15px;
+
+        top: 2em;
+
+        margin-left: 55%;
+        margin-right: auto;
+        padding: 2em;
+    }
+
+    .topPageInfoBox button{
+        min-height: 60px;
+        width: fit-content;
+        text-align: center;
+        padding-right: 1em;
+        padding-left: 1em;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

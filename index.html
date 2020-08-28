@@ -16,7 +16,7 @@
 
 <body>
 
-<h1>Art Webshop</h1>
+<h1>Logo?</h1>
 
 <div class="topPageContainer">
     <div class="topPageInfoBox">
@@ -24,11 +24,18 @@
         <h3>Know what never goes out of style? Art, classic art only gets more classic with time!</h3>
 
         <button id="goToShop" class="buttons">Buy Classic Art</button>
+        <div id="scroll-popup" class="mfp-hide white-popup">
+           <h2 style="color:#BC6A6A">Scroll down, silly!</h2>
+        </div>
     </div>
 
     <div id="shoppingCartDiv">
         <ion-icon name="cart-outline" id="shoppingCartIcon"></ion-icon>
     </div>
+</div>
+
+<div id="basket-popup" class="mfp-hide white-popup">
+    Basket empty!
 </div>
 
 <!-- Slider main container -->
@@ -38,20 +45,33 @@
         <!-- Slides -->
         <div class="swiper-slide swiperPage swiperPage1">
             <h2>Landscapes</h2>
+
             <img src="images/0.jpg" alt="Landscape Category Section">
-            <button id="landscapesPopup" class="buttons browseButton">Browse Landscapes</button>
+            <button id="browseLandscapes" class="buttons browseButton">Browse Landscapes</button>
+
+            <div id="landscape-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Landscapes</h2>
+            </div>
         </div>
         <div class="swiper-slide swiperPage swiperPage2">
             <h2>Animals</h2>
 
             <img src="images/000.jpg" alt="Landscape Category Section">
-            <button id="animalPopup" class="buttons browseButton">Browse Animals</button>
+            <button id="browseAnimals" class="buttons browseButton">Browse Animals</button>
+
+            <div id="animal-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Animals</h2>
+            </div>
         </div>
         <div class="swiper-slide swiperPage swiperPage3">
             <h2>Portraits</h2>
 
             <img src="images/02.jpg" alt="Landscape Category Section">
-            <button id="portraitPopup" class="buttons browseButton">Browse Portraits</button>
+            <button id="browsePortraits" class="buttons browseButton">Browse Portraits</button>
+
+            <div id="portrait-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Portraits</h2>
+            </div>
         </div>
     </div>
     <!-- If we need pagination -->
@@ -70,17 +90,56 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
+
+            $('#goToShop').magnificPopup({  items: {
+                    src: '#scroll-popup',
+                    type: 'inline'
+                }});
+
+        $('#browseLandscapes').magnificPopup({  items: {
+                src: '#landscape-popup',
+                type: 'inline'
+            }});
+
+        $('#browseAnimals').magnificPopup({  items: {
+                src: '#animal-popup',
+                type: 'inline'
+            }});
+
+        $('#browsePortraits').magnificPopup({  items: {
+                src: '#portrait-popup',
+                type: 'inline'
+            }});
+
+        $('#shoppingCartDiv').magnificPopup({  items: {
+                src: '#basket-popup',
+                type: 'inline'
+            }});
+
         var mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
-            slidesPerView: 3,
+            slidesPerView: 1,
             margin: 5,
             loop: true,
             centeredSlides: true,
             grabCursor: true,
             simulateTouch:true,
             fade: { crossFade: true },
-
+            // Responsive breakpoints
+            breakpoints: {
+                800: {
+                    slidesPerView: 2
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1920: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            },
             // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -98,7 +157,13 @@
 
 <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="js/forside.js"></script>
 
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="node_modules/magnific-popup/dist/magnific-popup.css">
+
+<!-- Magnific Popup core JS file -->
+<script src="node_modules/magnific-popup/dist/jquery.magnific-popup.js"></script>
+
+<script src="js/forside.js"></script>
 </body>
 </html>
