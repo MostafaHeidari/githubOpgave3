@@ -1,0 +1,289 @@
+<!-- Instruktion til webbrowser om at vi kører HTML5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="robots" content="All">
+    <meta name="author" content="Henrik Piga">
+    <meta name="copyright" content="All rights reserved">
+
+
+    <link href="css/stylesBasket.css" rel="stylesheet" type="text/css">
+
+    <link href="css/stylesIndexCopy.css" rel="stylesheet" type="text/css">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+
+<!--Indsætter basket direkte i HTML-->
+
+
+
+
+<h1>Logo?</h1>
+
+<div class="topPageContainer">
+    <div class="topPageInfoBox">
+        <h2>Classic, <br>the 'new' black</h2>
+        <h3>Know what never goes out of style? Art, classic art only gets more classic with time!</h3>
+
+        <button id="goToShop" class="buttons">Buy Classic Art</button>
+        <div id="scroll-popup" class="mfp-hide white-popup">
+           <h2 style="color:#BC6A6A">Scroll down, silly!</h2>
+        </div>
+    </div>
+
+    <a class="shoppingCartIcon">
+        <ion-icon name="cart-outline" id="shoppingCartIcon"></ion-icon>
+    </a>
+</div>
+
+<div id="basket-popup" class="mfp-hide white-popup">
+    Basket empty!
+</div>
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiperPage swiperPage1">
+            <h2>Landscapes</h2>
+
+            <img src="images/0.jpg" alt="Landscape Category Section">
+            <button id="browseLandscapes" class="buttons browseButton">Browse Landscapes</button>
+
+            <div id="landscape-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Landscapes</h2>
+            </div>
+        </div>
+        <div class="swiper-slide swiperPage swiperPage2">
+            <h2>Animals</h2>
+
+            <img src="images/000.jpg" alt="Landscape Category Section">
+            <button id="browseAnimals" class="buttons browseButton">Browse Animals</button>
+
+            <div id="animal-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Animals</h2>
+            </div>
+        </div>
+        <div class="swiper-slide swiperPage swiperPage3">
+            <h2>Portraits</h2>
+
+            <img src="images/02.jpg" alt="Landscape Category Section">
+            <button id="browsePortraits" class="buttons browseButton">Browse Portraits</button>
+
+            <div id="portrait-popup" class="mfp-hide shop-popup">
+                <h2 style="color:#BC6A6A">Scroll down, silly! <br> Portraits</h2>
+            </div>
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<div class="coverShield displayNone"></div>
+
+<div class="basketContainer displayNone">
+    <div class="cross">
+        <div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <h6>Basket</h6>
+
+    <div class="cartItem">
+        <img src="images/bg-horizon-mobile.jpg" alt="produkt">
+        <p class="title">Madrid</p>
+        <p class="price">100 kroner</p>
+        <button>Remove product</button>
+    </div>
+
+    <div class="setDelivery">
+        <button class="basketButton click">Set delivery</button>
+        <p>Edit</p>
+
+        <div class="deliveryInformation">
+            <form autocomplete="off">
+                <label for="name">name:</label>
+                <input type="text" id="name" name="name" autocomplete="off" required>
+
+                <label for="address">address:</label>
+                <input type="text" id="address" name="address" autocomplete="off" required>
+
+                <label for="zipCode">zip code:</label>
+                <input type="text" id="zipCode" name="zipCode" autocomplete="off" required>
+
+                <label for="province">province:</label>
+                <input type="text" id="province" name="province" autocomplete="off">
+
+                <label for="country">country:</label>
+                <input type="text" id="country" name="country" autocomplete="off" required>
+
+                <!--                    Til at give "Udfyld dette felt" alert-->
+                <input class="submit" type="submit" value="Confirm">
+            </form>
+
+            <button>Confirm</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(".shoppingCartIcon").click(function () {
+            $(".basketContainer").fadeIn(200).css('display', 'flex');
+        });
+
+        $(".cross").click(function () {
+            $(".basketContainer").fadeOut(200).css('display', 'flex');
+        });
+
+        $(".cartItem > button").click(function () {
+            
+        });
+
+        $(".setDelivery > p").hide();
+
+        $(".deliveryInformation button:last-of-type").click(function () {
+            if ($("#name").val()){
+                if ($("#address").val()){
+                    if ($("#zipCode").val()){
+                        if ($("#country").val()){
+                            hideDeliveryInfo();
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+        });
+
+        $(".setDelivery > p").click(function () {
+            showDeliveryInfo();
+        });
+
+        $(".basketButton").click(function () {
+            if ($(".basketButton").hasClass('click')){
+                if ($("#name").val()){
+                    if ($("#address").val()){
+                        if ($("#zipCode").val()){
+                            if ($("#country").val()){
+                                hideDeliveryInfo();
+                            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {
+                showDeliveryInfo()
+            }
+        });
+
+        function showDeliveryInfo()  {
+            $(".deliveryInformation").slideDown(400);
+            $(".setDelivery > p").fadeOut(200);
+            $(".basketButton").addClass("click");
+        }
+
+
+        function hideDeliveryInfo() {
+            $(".deliveryInformation").slideUp(400);
+            $(".setDelivery > p").fadeIn(200);
+            $(".setDelivery > .basketButton").css('background-color', '#5EB848');
+            $(".basketButton").removeClass("click");
+        }
+    });
+
+    $(document).ready(function(){
+
+            $('#goToShop').magnificPopup({  items: {
+                    src: '#scroll-popup',
+                    type: 'inline'
+                }});
+
+        $('#browseLandscapes').magnificPopup({  items: {
+                src: '#landscape-popup',
+                type: 'inline'
+            }});
+
+        $('#browseAnimals').magnificPopup({  items: {
+                src: '#animal-popup',
+                type: 'inline'
+            }});
+
+        $('#browsePortraits').magnificPopup({  items: {
+                src: '#portrait-popup',
+                type: 'inline'
+            }});
+
+        $('#shoppingCartDiv').magnificPopup({  items: {
+                src: 'basket.html',
+                type: 'ajax'
+            }});
+
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 1,
+            margin: 5,
+            loop: true,
+            centeredSlides: true,
+            grabCursor: true,
+            simulateTouch:true,
+            fade: { crossFade: true },
+            // Responsive breakpoints
+            breakpoints: {
+                800: {
+                    slidesPerView: 2
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1920: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+    });
+
+</script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="node_modules/magnific-popup/dist/magnific-popup.css">
+
+<!-- Magnific Popup core JS file -->
+<script src="node_modules/magnific-popup/dist/jquery.magnific-popup.js"></script>
+
+<script src="js/forside.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.shoppingCartIcon{
+    position: fixed;
+    top: 18px;
+    right: 30px;
+    color: #BC6A6A;
+}
+
+.basketContainer{
+    backdrop-filter: blur(5vw);
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+}
+
+.setDelivery{
+    margin-bottom: 20vw;
+}
+
+
+.displayNone{
+    display: none;
+}
