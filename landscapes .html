@@ -1,0 +1,112 @@
+<!-- Instruktion til webbrowser om at vi kører HTML5 -->
+<!DOCTYPE html>
+
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - det ser brugeren ikke, men det fortæller noget om siden -->
+<head>
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>Sigende titel</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link href="landscapes%20.css" rel="stylesheet" type="text/css">
+
+
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+<div id="landscapes-section">
+    <div class="overskrift1"><h1>Landscapes</h1></div>
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul class="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+                <div class="pic-boks nr1">
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul class="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title"><h2>Title</h2></div>
+                <div class="to-sætning">
+                    <ul>Lorem ipsum blabl</ul>
+                    <ul class="lille-space-ul">Lorem ipsum blabl</ul>
+                </div>
+            </div>
+         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <div class="prise-boks">
+        <p>100 Kroner</p>
+    </div>
+    <button id="add to cart" class="buttons">Add to cart</button>
+</div>
+
+
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        let mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+
+        })
+    });
+</script>
+
+</body>
+</html>
