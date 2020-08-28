@@ -12,8 +12,6 @@ html {
 
 body {
     margin: 0; /* Ingen kanter i siden af browser */
-    background-image: url("../images/bg-horizon-mobile.jpg");
-    height: 300vh;
     position: relative;
 }
 
