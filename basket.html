@@ -1,0 +1,133 @@
+<!-- Instruktion til webbrowser om at vi kører HTML5 -->
+<!DOCTYPE html>
+
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - det ser brugeren ikke, men det fortæller noget om siden -->
+<head>
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>Sigende titel</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="css/stylesBasket.css" rel="stylesheet" type="text/css">
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!-- i <body> har man alt indhold på siden som brugeren kan se -->
+<body>
+
+<!-- Her skal sidens indhold ligge -->
+    <div class="coverShield"></div>
+
+    <div class="basketContainer">
+        <h6>Basket</h6>
+
+        <div class="cartItem">
+            <img src="images/bg-horizon-mobile.jpg" alt="produkt">
+            <p class="title">Madrid</p>
+            <p class="price">100 kroner</p>
+            <div class="cross">
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="setDelivery">
+            <button class="basketButton click">Set delivery</button>
+            <p>Edit</p>
+
+            <div class="deliveryInformation">
+                <form autocomplete="off">
+                    <label for="name">name:</label>
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+
+                    <label for="address">address:</label>
+                    <input type="text" id="address" name="address" autocomplete="off" required>
+
+                    <label for="zipCode">zip code:</label>
+                    <input type="text" id="zipCode" name="zipCode" autocomplete="off" required>
+
+                    <label for="province">province:</label>
+                    <input type="text" id="province" name="province" autocomplete="off">
+
+                    <label for="country">country:</label>
+                    <input type="text" id="country" name="country" autocomplete="off" required>
+
+<!--                    Til at give "Udfyld dette felt" alert-->
+                    <input class="submit" type="submit" value="Confirm">
+                </form>
+
+                <button>Confirm</button>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    $(function () {
+        $(".setDelivery > p").hide();
+
+        $(".deliveryInformation button:last-of-type").click(function () {
+            if ($("#name").val()){
+                if ($("#address").val()){
+                    if ($("#zipCode").val()){
+                        if ($("#country").val()){
+                            hideDeliveryInfo();
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+        });
+
+        $(".setDelivery > p").click(function () {
+            showDeliveryInfo();
+        });
+
+        $(".basketButton").click(function () {
+            if ($(".basketButton").hasClass('click')){
+                if ($("#name").val()){
+                    if ($("#address").val()){
+                        if ($("#zipCode").val()){
+                            if ($("#country").val()){
+                                hideDeliveryInfo();
+                            } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                        } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                    } else {$(".deliveryInformation > form > input:last-of-type").click();}
+                } else {$(".deliveryInformation > form > input:last-of-type").click();}
+            } else {
+                showDeliveryInfo()
+            }
+        });
+
+        function showDeliveryInfo()  {
+            $(".deliveryInformation").slideDown(400);
+            $(".setDelivery > p").fadeOut(200);
+            $(".basketButton").addClass("click");
+        }
+
+
+        function hideDeliveryInfo() {
+            $(".deliveryInformation").slideUp(400);
+            $(".setDelivery > p").fadeIn(200);
+            $(".setDelivery > .basketButton").css('background-color', '#5EB848');
+            $(".basketButton").removeClass("click");
+        }
+    });
+
+</script>
+</body>
+</html>
